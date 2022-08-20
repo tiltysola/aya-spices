@@ -1,6 +1,6 @@
 {
   "name": "aya-spices",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/main/background.js",
   "description": "aya-spices",
   "homepage": "https://git.futo.design/zero/aya-spices",

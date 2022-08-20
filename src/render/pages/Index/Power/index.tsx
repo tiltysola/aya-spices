@@ -14,7 +14,7 @@ const Index = () => {
 
   useEffect(() => {
     ipcRenderer.invoke('util_get_tdp').then((tdp) => {
-      setCurrentTdp(tdp);
+      setCurrentTdp(tdp || 8);
     });
   }, []);
 

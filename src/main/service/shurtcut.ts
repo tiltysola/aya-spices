@@ -10,7 +10,7 @@ const foregroundWindowPath = path.join(process.cwd(), './resources/ForegroundWin
 let hWnd: string | null = null;
 
 export const registerShortcutKey = () => {
-  const accelerator = 'Alt+1';
+  const accelerator = 'Ctrl+Meta+F12';
 
   globalShortcut.register(accelerator, () => {
     logger.debug('[Suspension]', 'Shortcut key pressed.');
