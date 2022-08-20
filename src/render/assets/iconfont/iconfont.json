@@ -1,0 +1,23 @@
+{
+  "id": "3600665",
+  "name": "AyaSpices",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "8106221",
+      "name": "settings",
+      "font_class": "settings",
+      "unicode": "e699",
+      "unicode_decimal": 59033
+    },
+    {
+      "icon_id": "12865680",
+      "name": "menu",
+      "font_class": "menu",
+      "unicode": "e6ec",
+      "unicode_decimal": 59116
+    }
+  ]
+}

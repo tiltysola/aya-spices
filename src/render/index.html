@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="src/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AyaSpices</title>
+    <script>
+      const global = globalThis;
+    </script>
+    <script>
+      let initialized = false;
+      setInterval(() => {
+        const root = document.querySelector('#root');
+        if (root && root.children.length === 0 && initialized === true) {
+          document.write(`
+            <style>
+              * {
+                margin: 0;
+              }
+              .error-occurred {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                border-radius: 0;
+                background-color: #000000;
+                box-shadow: none;
+                overflow: hidden;
+              }
+              .error-occurred button {
+                padding: 13px 12px 12px 12px;
+                border: none;
+                font-size: 12px;
+                line-height: 18px;
+                color: #dddddd;
+                background-color: transparent;
+                transition: all 0.3s;
+                cursor: pointer;
+              }
+              .error-occurred button:hover {
+                color: #ffffff;
+              }
+            </style>
+            <div class="error-occurred">
+              <button onclick="location.reload();">应用程序崩溃，点击刷新</button>
+            </div>
+          `);
+        } else if (root && root.children.length > 0) {
+          initialized = true;
+        }
+      }, 100);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./main.tsx"></script>
+  </body>
+</html>

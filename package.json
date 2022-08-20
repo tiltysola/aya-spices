@@ -1,0 +1,114 @@
+{
+  "name": "aya-spices",
+  "version": "1.0.0",
+  "main": "dist/main/background.js",
+  "description": "aya-spices",
+  "homepage": "https://git.futo.design/zero/aya-spices",
+  "license": "MIT",
+  "author": {
+    "name": "YoumuKonpaku",
+    "email": "kanade@acgme.cn"
+  },
+  "repository": {
+    "url": "https://git.futo.design/zero/aya-spices.git"
+  },
+  "build": {
+    "appId": "com.youmukonpaku.ayaspices",
+    "productName": "Aya Spices",
+    "copyright": "* Anyone Who Love This Software *",
+    "mac": {
+      "icon": "build/icons/mac/icon.icns"
+    },
+    "win": {
+      "requestedExecutionLevel": "highestAvailable",
+      "icon": "build/icons/win/icon.ico"
+    },
+    "linux": {
+      "icon": "build/icons/png/512x512.png"
+    },
+    "files": [
+      "node_modules",
+      "dist/main/**",
+      "dist/render/**"
+    ],
+    "extraFiles": [
+      {
+        "from": "build",
+        "to": "build",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "resources",
+        "to": "resources",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "electronDownload": {
+      "mirror": "https://npmmirror.com/mirrors/electron/"
+    },
+    "nsisWeb": {
+      "appPackageUrl": "https://npmmirror.com/mirrors/electron-builder-binaries/"
+    }
+  },
+  "scripts": {
+    "dev": "concurrently -k -n=react,electron -c=green,blue \"npm run dev:react\" \"npm run dev:electron\"",
+    "dev:react": "vite --mode development",
+    "dev:electron": "cross-env NODE_ENV=development node build/electron.js",
+    "build": "npm run build:react && npm run build:electron",
+    "build:win": "npm run build:react && npm run build:electron:win",
+    "build:mac": "npm run build:react && npm run build:electron:mac",
+    "build:react": "vite build",
+    "build:electron": "cross-env NODE_ENV=production node build/electron.js && electron-builder build",
+    "build:electron:win": "cross-env NODE_ENV=production node build/electron.js && electron-builder build --win",
+    "build:electron:mac": "cross-env NODE_ENV=production node build/electron.js && electron-builder build --mac",
+    "serve:react": "vite preview",
+    "clean": "rm -rf dist",
+    "fix": "npm run prettier && npm run lint:fix",
+    "prettier": "prettier --write .",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "ahooks": "^3.7.0",
+    "classnames": "^2.3.1",
+    "moment": "^2.29.4",
+    "node-wmi": "^0.0.5",
+    "numbro": "^2.3.6",
+    "rc-slider": "^10.0.1",
+    "rc-switch": "^3.2.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1",
+    "systeminformation": "^5.12.6"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-router-dom": "^5.3.2",
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "@vitejs/plugin-react": "^1.1.3",
+    "concurrently": "^6.5.1",
+    "cross-env": "^7.0.3",
+    "electron": "^16.0.5",
+    "electron-builder": "^22.14.5",
+    "electron-connect": "^0.6.3",
+    "esbuild": "^0.14.8",
+    "eslint": "^8.5.0",
+    "eslint-config-ali": "^13.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "less": "^4.1.2",
+    "prettier": "^2.7.1",
+    "typescript": "^4.5.4",
+    "vite": "^2.7.6",
+    "vite-plugin-eslint": "^1.3.0"
+  }
+}

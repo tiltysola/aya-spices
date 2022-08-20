@@ -1,0 +1,25 @@
+# Dirs
+node_modules/
+dist/
+public/
+src/templates
+src/render/assets
+src/render/framework
+grimoire/
+tools/
+
+# Husky
+.husky/
+
+# Files
+.eslintrc
+.gitignore
+.npmrc
+.prettierignore
+.prettierrc
+
+# Proceed by eslint
+**/*.js
+**/*.jsx
+**/*.ts
+**/*.tsx
