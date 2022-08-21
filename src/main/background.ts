@@ -23,8 +23,7 @@ if (app.isPackaged) {
   if (process.platform === 'win32' && !storage.get('disble_startup')) {
     app.setLoginItemSettings({
       openAtLogin: true,
-      openAsHidden: true,
-      args: ['--openAsHidden'],
+      name: 'AyaSpices',
     });
   }
   /* Win32: end */
